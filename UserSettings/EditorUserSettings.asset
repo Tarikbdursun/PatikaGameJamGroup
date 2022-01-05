@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!162 &1
+EditorUserSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 4
+  m_ConfigSettings:
+    RecentlyUsedScenePath-0:
+      value: 224247031146464b0202153305264c04290149152a27217f3e2a183de7f37b1eede009dae43f31392a4dc9330301163ee60f1b34a65a441e1f07e917
+      flags: 0
+    RecentlyUsedScenePath-1:
+      value: 224247031146464b0202153305264c04290149152a27217f3e2a183de7f37b1eede009dae43f31392a4dc9330301163ee60f1b34a659441e1f07e917
+      flags: 0
+    RecentlyUsedScenePath-2:
+      value: 224247031146464b0202153305264c04290149152a27217f3e2a183de7f37b1eede009dae43f31392a4dc9330301053ae10f1b1fc9181e040303c25e40b1051d18d101
+      flags: 0
+    RecentlyUsedScenePath-3:
+      value: 224247031146464b0202153305264c04290149152a27217f3e2a183de7f37b1eede009dae43f31392a4dc93303011136e635595eb81e04020517
+      flags: 0
+    RecentlyUsedScenePath-4:
+      value: 224247031146464b0202153305264c04290149152a27217f3e2a183de7f37b1eede009dae43f31392a4dc93303011136e6355958b81e04020517
+      flags: 0
+    RecentlyUsedScenePath-5:
+      value: 224247031146464b0202153305264c04290149152a27217f3e2a183de7f37b1eede009dae43f31392a4dc9330301053ae10f1b1fc9181e040303c25e44b1051d18d101
+      flags: 0
+    RecentlyUsedScenePath-6:
+      value: 224247031146464b0202153305264c04290149152a27217f3e2a183de7f37b1eede009dae43f31392a4dc9330301053ae10f1b1fc9181e040303c25e45b1051d18d101
+      flags: 0
+    RecentlyUsedScenePath-7:
+      value: 224247031146464b0202153305264c04290149152a27217f3e2a183de7f37b1eede009dae43f31392a4dc9330301053ae10f1b1fc9181e040303c25e43b1051d18d101
+      flags: 0
+    RecentlyUsedScenePath-8:
+      value: 224247031146464b0202153305264c04290149152a27217f3e2a183de7f37b1eede009dae43f31392a4dc9330301123efc0e365ba7451f05181ae4
+      flags: 0
+    RecentlyUsedScenePath-9:
+      value: 224247031146464b0202153305264c04290149152a27217f3e2a183de7f37b1eede009dae43f31392a4dc93303011136e635585bb81e04020517
+      flags: 0
+    vcSharedLogLevel:
+      value: 0d5e400f0650
+      flags: 0
+  m_VCAutomaticAdd: 1
+  m_VCDebugCom: 0
+  m_VCDebugCmd: 0
+  m_VCDebugOut: 0
+  m_SemanticMergeMode: 2
+  m_VCShowFailedCheckout: 1
+  m_VCOverwriteFailedCheckoutAssets: 1
+  m_VCProjectOverlayIcons: 1
+  m_VCHierarchyOverlayIcons: 1
+  m_VCOtherOverlayIcons: 1
+  m_VCAllowAsyncUpdate: 1
