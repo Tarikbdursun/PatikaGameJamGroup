@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Player Settings
   m_EditorClassIdentifier: 
   forwardSpeed: 1
-  swerweSpeed: 4
+  swerweSpeed: 5
   minXPos: -0.9
   maxXpos: 0.9
