@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Helpers;
+using System;
 
 public class LevelController : MonoSingleton<LevelController>
 {
+    public event Action NextLevel;
+
     #region Variables
+
+    public int LevelIndex => currentLevelIndex;
     private BaseLevel[] levels;
     private int currentLevelIndex;
 
@@ -17,12 +22,13 @@ public class LevelController : MonoSingleton<LevelController>
     {
         SetupLevel();
         CloseAllLevels();
+        currentLevelIndex = PlayerPrefs.GetInt("Level_Index", 0);
     }
 
     private void Start()
     {
-        currentLevelIndex = PlayerPrefs.GetInt("Level_Index", 0);
         levels[currentLevelIndex].gameObject.SetActive(true);
+        NextLevel += OnNextLevel;
     }
 
     #endregion
@@ -31,21 +37,7 @@ public class LevelController : MonoSingleton<LevelController>
 
     public void GetNextLevel()
     {
-        levels[currentLevelIndex].gameObject.SetActive(false);
-
-        Player.Instance.transform.position = Vector3.zero;
-
-        GameManager.Instance.IsGameStart = false;
-
-        currentLevelIndex++;
-        if (currentLevelIndex >= levels.Length)
-        {
-            Debug.Log("all levels completed");
-            return;
-        }
-        PlayerPrefs.SetInt("Level_Index", currentLevelIndex);
-
-        levels[currentLevelIndex].gameObject.SetActive(true);
+        NextLevel?.Invoke();
     }
 
     private void SetupLevel()
@@ -59,6 +51,26 @@ public class LevelController : MonoSingleton<LevelController>
         {
             level.gameObject.SetActive(false);
         }
+    }
+
+    #endregion
+
+    #region Callbacks
+
+    private void OnNextLevel()
+    {
+        levels[currentLevelIndex].gameObject.SetActive(false);
+
+        currentLevelIndex++;
+        
+        if (currentLevelIndex >= levels.Length)
+        {
+            Debug.Log("all levels completed");
+            return;
+        }
+        PlayerPrefs.SetInt("Level_Index", currentLevelIndex);
+
+        levels[currentLevelIndex].gameObject.SetActive(true);
     }
 
     #endregion
