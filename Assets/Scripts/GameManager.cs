@@ -1,42 +1,19 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Helpers;
 
-public class GameManager : MonoBehaviour
+
+public class GameManager : MonoSingleton<GameManager>
 {
-    #region Variables
-    public bool isGameStart;
-    #endregion
-    
-    #region Singleton
-    public static GameManager instance;
+    public bool IsGameStart { get; set; }
 
-    private void InitSingleton()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
-    }
-    #endregion
-
-    private void Awake()
-    {
-        InitSingleton();
-    }
-    void Start()
-    {
-
-    }
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !IsGameStart)
         {
-            isGameStart = true;
+            IsGameStart = true;
         }
     }
 }

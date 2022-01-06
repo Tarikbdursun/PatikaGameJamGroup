@@ -1,19 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Helpers;
 
-public class CameraController : MonoBehaviour
+public class CameraController : MonoSingleton<CameraController>
 {
     [SerializeField]
     private GameObject target;
 
-
     Vector3 offset;
+    
     void Start()
     {
         offset = transform.position - target.transform.position;
     }
-
 
     void Update()
     {
