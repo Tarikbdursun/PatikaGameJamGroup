@@ -7,6 +7,8 @@ public class Player : MonoSingleton<Player>
 {
     #region Variables
     [SerializeField] private PlayerSettings playerSettings;
+
+    [SerializeField] private Animator animator;
     private bool canMove = false;
 
     private float touchPosX;
@@ -27,18 +29,9 @@ public class Player : MonoSingleton<Player>
         if (GameManager.Instance.IsGameStart && canMove)
         {
             Movement();
+            AnimationController();
         }
     }
-
-    private void OnTriggerEnter(Collider other) 
-    {
-        if (other.name == "FinishPoint")
-        {
-            GameManager.Instance.GetFinishGame();
-            //LevelController.Instance.GetNextLevel();
-        }
-    }
-
     #endregion
 
     #region Methods
@@ -56,6 +49,10 @@ public class Player : MonoSingleton<Player>
             transform.position.y,
             transform.position.z + playerSettings.forwardSpeed * Time.deltaTime
         );
+    }
+    private void AnimationController() 
+    {
+        animator.SetTrigger("Walk");
     }
 
     #endregion
