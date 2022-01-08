@@ -16,12 +16,6 @@ public class PlayerCollisionControl : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        //Silinecek bir alttaki if bloðu
-        //if (other.name == "FinishPoint")
-        //{
-        //    GameManager.Instance.GetFinishGame();
-        //    //LevelController.Instance.GetNextLevel();
-        //}
         if (other.gameObject.GetComponent<Portals>().portalType == Portals.PortalType.negativePortal)
         {
             //negative point
@@ -38,12 +32,16 @@ public class PlayerCollisionControl : MonoBehaviour
             GameManager.Instance.GetFinishGame();
             //LevelController.Instance.GetNextLevel();
         }
-        if (other.gameObject.GetComponent<Portals>().portalType==Portals.PortalType.collectable)
+        if (other.gameObject.GetComponent<Portals>().portalType == Portals.PortalType.positiveCollectable)
         {
-            point++;
+            point += 9;
             Destroy(other.gameObject);
         }
-        //CollectableObjects için iki if bloðu daha yazýlacak (negative8puan positive9puan)
+        if (other.gameObject.GetComponent<Portals>().portalType == Portals.PortalType.negativeCollectable)
+        {
+            point -= 8;
+            Destroy(other.gameObject);
+        }
     }
     #endregion
 

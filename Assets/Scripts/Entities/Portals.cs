@@ -11,6 +11,7 @@ public class Portals : MonoBehaviour
         negativePortal,
         positivePortal,
         finish,
-        collectable
+        positiveCollectable,
+        negativeCollectable
     }
 }
