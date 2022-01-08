@@ -11,6 +11,7 @@ public class LevelController : MonoSingleton<LevelController>
     #region Variables
 
     public int LevelIndex => currentLevelIndex;
+    public GameObject FinishPlane {get; set;} = null;
     private BaseLevel[] levels;
     private int currentLevelIndex;
 
@@ -23,6 +24,8 @@ public class LevelController : MonoSingleton<LevelController>
         SetupLevel();
         CloseAllLevels();
         currentLevelIndex = PlayerPrefs.GetInt("Level_Index", 0);
+        
+        levels[currentLevelIndex].GetComponent<Plane>().GeneratePlane();
     }
 
     private void Start()

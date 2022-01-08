@@ -10,6 +10,7 @@ public class Player : MonoSingleton<Player>
 
     [SerializeField] private Animator animator;
     private bool canMove = false;
+    public bool onFinishPlane = false;
 
     private float touchPosX;
 
@@ -26,7 +27,7 @@ public class Player : MonoSingleton<Player>
 
     void Update()
     {
-        if (GameManager.Instance.IsGameStart && canMove)
+        if (GameManager.Instance.IsGameStart && canMove && !onFinishPlane)
         {
             Movement();
             AnimationController();

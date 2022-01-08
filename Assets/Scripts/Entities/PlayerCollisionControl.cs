@@ -29,7 +29,13 @@ public class PlayerCollisionControl : MonoBehaviour
         }
         if (other.gameObject.GetComponent<Portals>().portalType == Portals.PortalType.finish)
         {
-            GameManager.Instance.GetFinishGame();
+            LeanTween.moveLocalY(Player.Instance.gameObject,4,2);
+            Player.Instance.onFinishPlane = true;
+            LeanTween.scaleY(LevelController.Instance.FinishPlane,5,2).setOnComplete
+            (
+                () => GameManager.Instance.GetFinishGame()
+            );
+            
             //LevelController.Instance.GetNextLevel();
         }
         if (other.gameObject.GetComponent<Portals>().portalType == Portals.PortalType.positiveCollectable)

@@ -16,6 +16,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3398081829286648546, guid: 167d2723b369f77439303100184289fb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398081829286648546, guid: 167d2723b369f77439303100184289fb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398081829286648546, guid: 167d2723b369f77439303100184289fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -59,6 +67,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d07c20335b2296c4a8ddeff2043ab0fd, type: 2}
+    - target: {fileID: 3398081830879791399, guid: 167d2723b369f77439303100184289fb, type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398081830879791402, guid: 167d2723b369f77439303100184289fb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 167d2723b369f77439303100184289fb, type: 3}
 --- !u!1 &6052993368117823836 stripped
@@ -78,7 +94,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.1}
-  m_Center: {x: 0, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 1.5, z: 0.5}
 --- !u!114 &6031343782687307352
 MonoBehaviour:
   m_ObjectHideFlags: 0
