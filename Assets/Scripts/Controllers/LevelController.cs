@@ -71,6 +71,7 @@ public class LevelController : MonoSingleton<LevelController>
         PlayerPrefs.SetInt("Level_Index", currentLevelIndex);
 
         levels[currentLevelIndex].gameObject.SetActive(true);
+        levels[currentLevelIndex].GetComponent<Plane>().GeneratePlane();
     }
 
     #endregion

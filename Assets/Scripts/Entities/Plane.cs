@@ -6,6 +6,8 @@ using UnityEditor;
 public class Plane : MonoBehaviour
 {
     [SerializeField]
+    private Color color;
+    [SerializeField]
     private Transform parent;
     [SerializeField]
     GameObject planePrefab;
@@ -28,6 +30,7 @@ public class Plane : MonoBehaviour
         {
             var newPlaneMesh = Instantiate(planePrefab, new Vector3(0, 0, planePrefab.transform.localScale.z * i), Quaternion.identity, parent);
             newPlaneMesh.name = "PlaneMesh";
+            newPlaneMesh.transform.GetChild(0).GetComponent<Renderer>().sharedMaterial.color = color;
         }
         var finishPlaneMesh = Instantiate(finishPlanePrefab, new Vector3(0, 0, planePrefab.transform.localScale.z * planeCount),Quaternion.identity,parent);
         finishPlaneMesh.name = "PlaneMesh";
