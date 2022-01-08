@@ -5,8 +5,7 @@ using Helpers;
 
 public class CameraController : MonoSingleton<CameraController>
 {
-    [SerializeField]
-    private GameObject target;
+    [SerializeField] private GameObject target;
 
     Vector3 offset;
     

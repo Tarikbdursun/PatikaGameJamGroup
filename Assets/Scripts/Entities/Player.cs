@@ -9,10 +9,10 @@ public class Player : MonoSingleton<Player>
     [SerializeField] private PlayerSettings playerSettings;
 
     [SerializeField] private Animator animator;
-    private bool canMove = false;
 
     private float touchPosX;
 
+    private bool canMove = false;
     #endregion
 
     #region Unity Methods
