@@ -38,9 +38,11 @@ public class Player : MonoSingleton<Player>
 
     private void Movement()
     {
-        if (Input.GetMouseButton(0))
+         
+        if (Input.touchCount > 0)
         {
-            touchPosX += Input.GetAxis("Mouse X") * playerSettings.swerweSpeed * Time.fixedDeltaTime;
+            var touch = Input.GetTouch(0);
+            touchPosX += touch.deltaPosition.x * playerSettings.swerweSpeed * Time.deltaTime;
         }
 
         transform.position = new Vector3
