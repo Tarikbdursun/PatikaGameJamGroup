@@ -10,6 +10,7 @@ public class Portals : MonoBehaviour
     {
         negativePortal,
         positivePortal,
-        finish
+        finish,
+        collectable
     }
 }

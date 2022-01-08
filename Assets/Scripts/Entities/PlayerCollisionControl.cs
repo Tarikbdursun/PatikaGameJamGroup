@@ -38,6 +38,11 @@ public class PlayerCollisionControl : MonoBehaviour
             GameManager.Instance.GetFinishGame();
             //LevelController.Instance.GetNextLevel();
         }
+        if (other.gameObject.GetComponent<Portals>().portalType==Portals.PortalType.collectable)
+        {
+            point++;
+            Destroy(other.gameObject);
+        }
         //CollectableObjects için iki if bloðu daha yazýlacak (negative8puan positive9puan)
     }
     #endregion
