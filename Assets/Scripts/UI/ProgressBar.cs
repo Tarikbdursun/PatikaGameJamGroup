@@ -16,7 +16,6 @@ public class ProgressBar : MonoBehaviour
     {
         Vector3 pointPosition = new Vector3(ScoreController.Instance.ProgressScore, 0, 0);
         heartPoint.transform.localPosition = Vector3.Lerp(heartPoint.transform.localPosition, pointPosition, .1f);
-        //LeanTween.moveLocalX(heartPoint,,1);
         heartPoint.transform.localPosition = new Vector3(Mathf.Clamp(heartPoint.transform.localPosition.x, -286, 286),0, 0);
     }
 }

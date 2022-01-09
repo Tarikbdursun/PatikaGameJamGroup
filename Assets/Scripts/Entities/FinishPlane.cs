@@ -6,12 +6,50 @@ public class FinishPlane : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        LeanTween.moveLocalY(Player.Instance.gameObject, 4, 2);
+        FinalMovement();
+    }
+
+    private void FinalMovement()
+    {
+        LeanTween.moveLocalY(Player.Instance.gameObject, GetFinalScore(), 2);
         Player.Instance.OnFinishPlane = true;
         Player.Instance.ResetWalkAnimation();
-        LeanTween.scaleY(LevelController.Instance.FinishPlane, 5, 2).setOnComplete
+        GoodOrBad();
+        LeanTween.scaleY(LevelController.Instance.FinishPlane, GetFinalScore()+1, 2).setOnComplete
         (
             () => GameManager.Instance.GetFinishGame()
         );
+    }
+
+    private void GoodOrBad()
+    {
+        if(IsProgressBarScoreGood())
+        {
+            Debug.Log("Good!");
+        }
+        else
+        {
+            Debug.Log("Bad!");
+        }
+    }
+
+    private int GetFinalScore()
+    {
+        if(IsProgressBarScoreGood())
+        {
+            return ScoreController.Instance.GoodScore;
+        }
+        
+        return ScoreController.Instance.BadScore;
+    }
+
+    private bool IsProgressBarScoreGood()
+    {
+        if(ScoreController.Instance.ProgressScore > 0)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
