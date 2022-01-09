@@ -26,10 +26,12 @@ public class FinishPlane : MonoBehaviour
         if(IsProgressBarScoreGood())
         {
             Debug.Log("Good!");
+            Player.Instance.Bride();
         }
         else
         {
             Debug.Log("Bad!");
+            Player.Instance.Separation();
         }
     }
 

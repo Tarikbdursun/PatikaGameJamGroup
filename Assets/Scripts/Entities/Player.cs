@@ -8,9 +8,12 @@ public class Player : MonoSingleton<Player>
     #region Variables
     [SerializeField] private PlayerSettings playerSettings;
 
-    [SerializeField] private Animator animator;
-    private bool canMove = false;
+    [SerializeField] private Animator playerAnimator;
+    [SerializeField] private Animator loveAnimator;
+
     public bool OnFinishPlane = false;
+    
+    private bool canMove = false;
 
     private float touchPosX;
 
@@ -31,7 +34,7 @@ public class Player : MonoSingleton<Player>
         if (GameManager.Instance.IsGameStart && canMove && !OnFinishPlane)
         {
             Movement();
-            animator.SetTrigger("Walk");
+            playerAnimator.SetTrigger("Walk");
         }
     }
     
@@ -58,7 +61,7 @@ public class Player : MonoSingleton<Player>
 
     public void ResetWalkAnimation()
     {
-        animator.ResetTrigger("Walk");
+        playerAnimator.ResetTrigger("Walk");
     }
 
 
@@ -81,5 +84,15 @@ public class Player : MonoSingleton<Player>
         canMove = false;
     }
 
+    public void Bride() 
+    {
+        playerAnimator.SetTrigger("Chicken");
+        loveAnimator.SetTrigger("Chicken");
+    }
+    public void Separation() 
+    {
+        playerAnimator.SetTrigger("Belly");
+        loveAnimator.SetTrigger("Sad");
+    }
     #endregion
 }
