@@ -12,7 +12,7 @@ public class LevelController : MonoSingleton<LevelController>
 
     public int LevelIndex => currentLevelIndex;
     public GameObject FinishPlane {get; set;} = null;
-    private BaseLevel[] levels;
+    private Level[] levels;
     private int currentLevelIndex;
 
     #endregion
@@ -45,7 +45,7 @@ public class LevelController : MonoSingleton<LevelController>
 
     private void SetupLevel()
     {
-        levels = GetComponentsInChildren<BaseLevel>();
+        levels = GetComponentsInChildren<Level>();
     }
 
     private void CloseAllLevels()

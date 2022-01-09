@@ -3293,7 +3293,7 @@ GameObject:
   - component: {fileID: 174483849871363035}
   - component: {fileID: 7959144275240644819}
   - component: {fileID: 6078407270909538486}
-  - component: {fileID: 7119454877697024134}
+  - component: {fileID: 6809847087188931723}
   m_Layer: 0
   m_Name: BadDoor
   m_TagString: Untagged
@@ -3378,7 +3378,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &7119454877697024134
+--- !u!114 &6809847087188931723
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3387,10 +3387,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6958026898273938449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc9d9b4936c7b8541a3974dc0b782f84, type: 3}
+  m_Script: {fileID: 11500000, guid: 945aad6cd750d95419a4fe719a575f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portalType: 0
+  doorPoint: -70
 --- !u!1 &7912539040177035356
 GameObject:
   m_ObjectHideFlags: 0
@@ -3484,7 +3484,7 @@ GameObject:
   - component: {fileID: 1730572462189239746}
   - component: {fileID: 6958384905985492307}
   - component: {fileID: 5357742607915839687}
-  - component: {fileID: 6859402620578250489}
+  - component: {fileID: 9178432558779503810}
   m_Layer: 0
   m_Name: GoodDoor
   m_TagString: Untagged
@@ -3569,7 +3569,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &6859402620578250489
+--- !u!114 &9178432558779503810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3578,10 +3578,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8121839433687541464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc9d9b4936c7b8541a3974dc0b782f84, type: 3}
+  m_Script: {fileID: 11500000, guid: 945aad6cd750d95419a4fe719a575f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portalType: 1
+  doorPoint: 70
 --- !u!1 &8195091246180824972
 GameObject:
   m_ObjectHideFlags: 0

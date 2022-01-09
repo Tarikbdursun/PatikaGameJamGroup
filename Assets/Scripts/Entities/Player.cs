@@ -10,7 +10,7 @@ public class Player : MonoSingleton<Player>
 
     [SerializeField] private Animator animator;
     private bool canMove = false;
-    public bool onFinishPlane = false;
+    public bool OnFinishPlane = false;
 
     private float touchPosX;
 
@@ -18,28 +18,30 @@ public class Player : MonoSingleton<Player>
 
     #region Unity Methods
 
-    private void Start() 
+    private void Start()
     {
-        LevelController.Instance.NextLevel += OnNextLevel;    
+        LevelController.Instance.NextLevel += OnNextLevel;
         GameManager.Instance.FinishGame += OnFinishGame;
         GameManager.Instance.StartGame += OnStartGame;
+        OnFinishPlane = false;
     }
 
     void Update()
     {
-        if (GameManager.Instance.IsGameStart && canMove && !onFinishPlane)
+        if (GameManager.Instance.IsGameStart && canMove && !OnFinishPlane)
         {
             Movement();
-            AnimationController();
+            animator.SetTrigger("Walk");
         }
     }
+    
     #endregion
 
     #region Methods
 
     private void Movement()
     {
-         
+
         if (Input.touchCount > 0)
         {
             var touch = Input.GetTouch(0);
@@ -53,10 +55,12 @@ public class Player : MonoSingleton<Player>
             transform.position.z + playerSettings.forwardSpeed * Time.deltaTime
         );
     }
-    private void AnimationController() 
+
+    public void ResetWalkAnimation()
     {
-        animator.SetTrigger("Walk");
+        animator.ResetTrigger("Walk");
     }
+
 
     #endregion
 

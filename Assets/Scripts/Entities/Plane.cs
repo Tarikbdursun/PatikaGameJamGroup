@@ -35,13 +35,18 @@ public class Plane : MonoBehaviour
             newPlaneMesh.name = "PlaneMesh";
             newPlaneMesh.transform.GetChild(0).GetComponent<Renderer>().sharedMaterial.color = color;
         }
+
         var finishPlaneMesh = Instantiate(finishPlanePrefab, new Vector3(0, -1, planePrefab.transform.localScale.z * planeCount),Quaternion.identity,parent);
         finishPlaneMesh.name = "PlaneMesh";
+
         var finishPlaneBackMesh = Instantiate(finishBackScorePrefab, new Vector3(0, 3, planePrefab.transform.localScale.z * (planeCount+1)),Quaternion.identity,parent);
         finishPlaneBackMesh.name = "PlaneMesh";
+
+        var startPlaneMesh = Instantiate(planePrefab, new Vector3(0, 0, -planePrefab.transform.localScale.z),Quaternion.identity,parent);
+        startPlaneMesh.name = "PlaneMesh";
+
         LevelController.Instance.FinishPlane = finishPlaneMesh;
     }
-
 }
 
 

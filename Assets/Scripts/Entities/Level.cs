@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseLevel : MonoBehaviour
+public class Level : MonoBehaviour
 {
     public void LevelCompleted()
     {
