@@ -9,11 +9,15 @@ public class Player : MonoSingleton<Player>
     [SerializeField] private PlayerSettings playerSettings;
 
     [SerializeField] private Animator animator;
+<<<<<<< HEAD
     private bool canMove = false;
     public bool onFinishPlane = false;
+=======
+>>>>>>> f52ef9370ef6b2fc22d21754d281590eb14633df
 
     private float touchPosX;
 
+    private bool canMove = false;
     #endregion
 
     #region Unity Methods
