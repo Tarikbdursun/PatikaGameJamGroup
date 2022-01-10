@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +6,12 @@ using UnityEngine;
 public class FinishPlane : MonoBehaviour
 {
 
+    
+
     private void OnTriggerEnter(Collider other)
     {
         FinalMovement();
+        GameManager.Instance.GetPlayerOnFinish();
     }
 
     private void FinalMovement()

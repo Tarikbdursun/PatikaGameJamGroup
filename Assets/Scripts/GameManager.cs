@@ -8,6 +8,7 @@ using Helpers;
 public class GameManager : MonoSingleton<GameManager>
 {
     public event Action StartGame;
+    public event Action PlayerOnFinish;
     public event Action FinishGame;
     public bool IsGameStart => isGameStart;
     private bool isGameStart = false;
@@ -29,6 +30,10 @@ public class GameManager : MonoSingleton<GameManager>
     public void GetFinishGame()
     {
         FinishGame?.Invoke();
+    }
+    public void GetPlayerOnFinish()
+    {
+        PlayerOnFinish?.Invoke();
     }
 
     private void OnNextLevel()

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public abstract class BaseCollectable : MonoBehaviour
 {
+    private void Start() 
+    {
+        gameObject.LeanMoveLocalY(.7f,.7f).setLoopPingPong();    
+        }
     
-
     private void OnTriggerEnter(Collider other) 
     {
         gameObject.SetActive(false);
@@ -14,6 +17,6 @@ public abstract class BaseCollectable : MonoBehaviour
 
     protected virtual void Increase()
     {
-        //maybe collectable sound
+        
     }
 }

@@ -45,6 +45,8 @@ public class UIController : MonoSingleton<UIController>
     {
         CloseAllPanels();
         finishPanel.SetActive(true);
+        finishPanel.transform.GetChild(1).transform.localScale = Vector3.one*.01f;
+        finishPanel.transform.GetChild(1).LeanScale(Vector3.one,.8f);
     }
 
     private void OnStartGame()

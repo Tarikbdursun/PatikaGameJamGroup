@@ -19,8 +19,11 @@ public class CameraController : MonoSingleton<CameraController>
     private GameObject finishCamera;
     private Vector3 offset;
 
+    
+
     private void Start() {
         GameManager.Instance.StartGame += OnStartGame;
+        GameManager.Instance.PlayerOnFinish += OnPlayerOnFinish;
 
         LevelController.Instance.NextLevel += OnNextLevel;
         offset = inGameCamera.transform.position - target.transform.position;
@@ -33,16 +36,25 @@ public class CameraController : MonoSingleton<CameraController>
 
     private void OnNextLevel()
     {
+        CloseAllCameras();
         startCamera.SetActive(true);
-        finishCamera.SetActive(false);
-        inGameCamera.SetActive(false);
     }
 
     private void OnStartGame()
     {
-        startCamera.SetActive(false);
-        finishCamera.SetActive(false);
+        CloseAllCameras();
         inGameCamera.SetActive(true);
+    }
+
+    private void OnPlayerOnFinish()
+    {
+        finishCamera.SetActive(true);
+    }
+    private void CloseAllCameras()
+    {
+        startCamera.SetActive(false);
+        inGameCamera.SetActive(false);
+        finishCamera.SetActive(false);
     }
 
 }
