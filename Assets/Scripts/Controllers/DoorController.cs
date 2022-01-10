@@ -14,9 +14,13 @@ public class DoorController : MonoBehaviour
     [SerializeField]
     private Transform spriteParentBad;
 
+    [SerializeField]
+    private GameObject spriteLuck;
+
     private void Start() 
     {   
         ActivateSprite(spriteIndex);
+        LuckDoorActivate();
     }
 
     private void ActivateSprite(int i)
@@ -28,6 +32,21 @@ public class DoorController : MonoBehaviour
         }
         spriteParentBad.GetChild(i).gameObject.SetActive(true);
         spriteParentGood.GetChild(i).gameObject.SetActive(true);
-        
+    }
+    private void LuckDoorActivate()
+    {
+        var childs = GetComponentsInChildren<Door>();
+
+        if(childs[0].isLuckDoor)
+        {
+            Instantiate(spriteLuck,childs[0].transform.GetChild(0).transform.position,Quaternion.identity,transform);
+            
+            childs[0].transform.GetChild(0).gameObject.SetActive(false);
+        }
+        if(childs[1].isLuckDoor)
+        {
+            Instantiate(spriteLuck,childs[1].transform.GetChild(0).transform.position,Quaternion.identity,transform);
+            childs[1].transform.GetChild(0).gameObject.SetActive(false);
+        }
     }
 }

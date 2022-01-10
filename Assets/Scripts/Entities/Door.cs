@@ -7,8 +7,7 @@ public class Door : MonoBehaviour
     [SerializeField] 
     private int doorPoint;
 
-    [SerializeField] 
-    bool isLuckDoor = false;
+    public bool isLuckDoor = false;
 
     private void LuckDoor()
     {
