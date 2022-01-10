@@ -6,6 +6,7 @@ using System;
 
 public class LevelController : MonoSingleton<LevelController>
 {
+    public GameObject MaleCharacter;
     public event Action NextLevel;
 
     #region Variables

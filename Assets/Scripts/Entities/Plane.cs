@@ -45,6 +45,9 @@ public class Plane : MonoBehaviour
         var startPlaneMesh = Instantiate(planePrefab, new Vector3(0, 0, -planePrefab.transform.localScale.z),Quaternion.identity,parent);
         startPlaneMesh.name = "PlaneMesh";
 
+        LevelController.Instance.MaleCharacter.transform.position = finishPlaneMesh.transform.position + 
+                                                                    new Vector3(-.8f,1,2.7f);
+
         LevelController.Instance.FinishPlane = finishPlaneMesh;
     }
 }

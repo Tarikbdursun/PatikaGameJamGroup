@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FinishPlane : MonoBehaviour
 {
+
     private void OnTriggerEnter(Collider other)
     {
         FinalMovement();
@@ -12,6 +13,7 @@ public class FinishPlane : MonoBehaviour
     private void FinalMovement()
     {
         LeanTween.moveLocalY(Player.Instance.gameObject, GetFinalScore(), 2);
+        LeanTween.moveLocalY(LevelController.Instance.MaleCharacter, GetFinalScore(), 2);
         Player.Instance.OnFinishPlane = true;
         Player.Instance.ResetWalkAnimation();
         GoodOrBad();
@@ -25,12 +27,15 @@ public class FinishPlane : MonoBehaviour
     {
         if(IsProgressBarScoreGood())
         {
-            Debug.Log("Good!");
+            Player.Instance.transform.LookAt(LevelController.Instance.MaleCharacter.transform.position);
+            LevelController.Instance.MaleCharacter.transform.LookAt(Player.Instance.transform.position);
+
             Player.Instance.Bride();
         }
         else
         {
-            Debug.Log("Bad!");
+            Player.Instance.transform.LookAt(LevelController.Instance.MaleCharacter.transform.position);
+            LevelController.Instance.MaleCharacter.transform.LookAt(-Player.Instance.transform.position);
             Player.Instance.Separation();
         }
     }

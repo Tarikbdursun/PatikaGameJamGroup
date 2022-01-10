@@ -76,7 +76,17 @@ public class Player : MonoSingleton<Player>
 
     private void OnNextLevel()
     {
+        OnFinishPlane = false;
         transform.position = Vector3.zero;
+        transform.LookAt(transform.position + new Vector3(0,0,1));
+
+        canMove = true;
+
+        playerAnimator.ResetTrigger("Chicken");
+        playerAnimator.ResetTrigger("Belly");
+
+        loveAnimator.ResetTrigger("Chicken");
+        loveAnimator.ResetTrigger("Sad");
     }
 
     private void OnFinishGame()
