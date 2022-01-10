@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class BaseCollectable : MonoBehaviour
 {
+    
+
     private void OnTriggerEnter(Collider other) 
     {
         gameObject.SetActive(false);

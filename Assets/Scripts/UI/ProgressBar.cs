@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Helpers;
 
-public class ProgressBar : MonoBehaviour
+public class ProgressBar : MonoSingleton<ProgressBar>
 {
     [SerializeField] 
     private GameObject heartPoint;
+
+    public GameObject GoodSprite;
+    public GameObject BadSprite;
+
 
     private void Update()
     {

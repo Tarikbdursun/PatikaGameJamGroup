@@ -9,4 +9,5 @@ public class GoodCollectable : BaseCollectable
         base.Increase();
         ScoreController.Instance.GoodScore++;
     }
+
 }

@@ -9,4 +9,5 @@ public class BadCollectable : BaseCollectable
         base.Increase();
         ScoreController.Instance.BadScore++;
     }
+
 }

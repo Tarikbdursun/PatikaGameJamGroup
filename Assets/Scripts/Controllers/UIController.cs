@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Helpers;
+using TMPro;
 
 public class UIController : MonoSingleton<UIController>
 {
@@ -15,7 +16,7 @@ public class UIController : MonoSingleton<UIController>
     [SerializeField]
     private GameObject finishPanel;
     [SerializeField]
-    private Text levelText;
+    private TextMeshProUGUI levelText;
 
     #endregion
 
@@ -30,7 +31,7 @@ public class UIController : MonoSingleton<UIController>
     
     private void Update()
     {
-        levelText.text = (LevelController.Instance.LevelIndex+1).ToString();
+        levelText.text ="Level "+ (LevelController.Instance.LevelIndex+1).ToString();
     }
 
     private void CloseAllPanels()

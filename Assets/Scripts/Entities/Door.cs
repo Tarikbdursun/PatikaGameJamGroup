@@ -25,5 +25,15 @@ public class Door : MonoBehaviour
             LuckDoor();
         }
         ScoreController.Instance.ProgressScore += doorPoint;
+        LeanTween.scale(gameObject,Vector3.zero,.5f);
+
+        if (doorPoint > 0)
+        {
+            LeanTween.scale(ProgressBar.Instance.GoodSprite,Vector3.one*1.2f,.15f).setLoopPingPong(2);
+        }
+        else
+        {
+            LeanTween.scale(ProgressBar.Instance.BadSprite,Vector3.one*1.2f,.15f).setLoopPingPong(2);
+        }
     }
 }
