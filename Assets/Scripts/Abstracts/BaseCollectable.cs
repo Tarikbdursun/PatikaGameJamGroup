@@ -4,19 +4,14 @@ using UnityEngine;
 
 public abstract class BaseCollectable : MonoBehaviour
 {
-    private void Start() 
+
+    private void OnTriggerEnter(Collider other)
     {
-        gameObject.LeanMoveLocalY(.7f,.7f).setLoopPingPong();    
-        }
-    
-    private void OnTriggerEnter(Collider other) 
-    {
-        gameObject.SetActive(false);
         Increase();
     }
 
     protected virtual void Increase()
     {
-        
+
     }
 }

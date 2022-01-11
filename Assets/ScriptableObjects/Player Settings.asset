@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afbf35a37cca433419cfccac424e7c3e, type: 3}
   m_Name: Player Settings
   m_EditorClassIdentifier: 
-  forwardSpeed: 1.5
+  forwardSpeed: 2
   swerweSpeed: 1
   minXPos: -0.9
   maxXpos: 0.9

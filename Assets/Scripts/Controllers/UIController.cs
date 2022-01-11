@@ -17,6 +17,10 @@ public class UIController : MonoSingleton<UIController>
     private GameObject finishPanel;
     [SerializeField]
     private TextMeshProUGUI levelText;
+    [SerializeField]
+    private Image Bride;
+    [SerializeField]
+    private Image BadGirl;
 
     #endregion
 
@@ -43,8 +47,17 @@ public class UIController : MonoSingleton<UIController>
 
     private void OnFinishGame()
     {
-        CloseAllPanels();
         finishPanel.SetActive(true);
+
+        if(IsProgressBarScoreGood())
+        {
+            Bride.gameObject.SetActive(true);
+        }
+        else
+        {
+            BadGirl.gameObject.SetActive(true);
+        }
+
         finishPanel.transform.GetChild(1).transform.localScale = Vector3.one*.01f;
         finishPanel.transform.GetChild(1).LeanScale(Vector3.one,.8f);
     }
@@ -59,6 +72,16 @@ public class UIController : MonoSingleton<UIController>
     {
         CloseAllPanels();
         startPanel.SetActive(true);
+    }
+
+    private bool IsProgressBarScoreGood()
+    {
+        if(ScoreController.Instance.ProgressScore > 0)
+        {
+            return true;
+        }
+
+        return false;
     }
 
 

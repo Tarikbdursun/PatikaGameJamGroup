@@ -8,13 +8,21 @@ public class GoodCollectable : BaseCollectable
     private void Start()
     {
         particle = Player.Instance.transform.GetChild(0).GetComponent<ParticleSystem>();
+        gameObject.LeanMoveY(transform.position.y + .5f, .7f).setEaseInOutSine().setLoopPingPong();
     }
     protected override void Increase()
     {
         base.Increase();
-        ScoreController.Instance.GoodScore++;
+        
+        particle.gameObject.SetActive(true);
         particle.Play();
-        particle.Clear();
+        transform.LeanScale(Vector3.one*.01f,.4f).setEaseOutSine().setOnComplete(FinalAnimate);
+        
+    }
+    private void FinalAnimate()
+    {
+        ScoreController.Instance.GoodScore++;
+        gameObject.SetActive(false);
     }
 
 
